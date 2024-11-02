@@ -1,6 +1,4 @@
-Berikut adalah README dalam format yang lebih lengkap berdasarkan contoh yang Anda berikan:
 
----
 
 # Tokopedia Clone Project
 
