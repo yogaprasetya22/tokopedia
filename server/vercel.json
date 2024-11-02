@@ -5,11 +5,5 @@
       "source": "/(.*)",
       "destination": "/api"
     }
-  ],
-  "build": {
-    "commands": {
-      "install": "pnpm add -D @prisma/client",
-      "build": "npx prisma generate && next build"
-    }
-  }
+  ]
 }
