@@ -11,7 +11,7 @@ export default function CategoryProduct() {
     );
 
     return (
-        <div className="flex space-x-4 sticky top-0 pt-[4.5rem] px-14 bg-white pb-2 -mx-12 z-40 ">
+        <div className="flex space-x-4 sticky top-0 pt-[4.5rem] px-14 bg-white pb-2 mx-0 md:-mx-12 z-40 ">
             {isLoading ? (
                 <>
                     <div className=" h-[50px] md:h-[64px] w-[100px] md:w-[216px] p-2 bg-gray-300 animate-pulse"></div>

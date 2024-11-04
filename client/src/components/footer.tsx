@@ -188,7 +188,7 @@ export function Footer() {
                         <li className="inline-block text-lg text-black font-semibold tracking-wide pt-10">
                             Ikut Kami
                         </li>
-                        <div className="flex pl-4 justify-start mt-2">
+                        <div className="hidden md:flex pl-4 justify-start mt-2">
                             <a
                                 className=" flex items-center text-gray-300 hover:text-green-500 text-sm font-medium mr-6 no-underline"
                                 href="#"
@@ -228,16 +228,16 @@ export function Footer() {
                         </div>
                     </ul>
                 </div>
-                <div className=" flex flex-col w-[50%] items-start ">
+                <div className=" flex  flex-col w-[50%] items-start ">
                     <div>
                         <Image
                             src="https://images.tokopedia.net/img/unify/il_footer_hd_v2.png"
                             alt="logo"
                             width={400}
                             height={300}
-                            className="w-full h-full object-contain"
+                            className="w-full h-full object-contain md:block hidden"
                         />
-                        <div className="flex gap-2">
+                        <div className="flex flex-wrap gap-2">
                             <Image
                                 src="https://assets.tokopedia.net/asts/assets-unify/img/icon-download-android.svg"
                                 alt="logo"
