@@ -8,8 +8,8 @@ export default function CatalogueProduct() {
         useCurrentCatalogue();
 
     return (
-        <div className="flex flex-1 flex-col items-center px-2">
-            <div className="grid md:grid-cols-6 grid-cols-2 gap-2 md:gap-4 content-stretch w-4/5 md:w-full ">
+        <div className="flex flex-col items-center px-2">
+            <div className="grid md:grid-cols-6 grid-cols-2 gap-2 md:gap-4 content-stretch w-full ">
                 {data &&
                     data.pages.map((product, index) => (
                         <Link

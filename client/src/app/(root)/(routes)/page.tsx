@@ -4,7 +4,7 @@ import CategoryProduct from "@/app/(root)/(routes)/components/category-product";
 import EmblaCarousel from "@/components/ui/embla-carosul";
 import CatalogueProduct from "./components/catalogue-product";
 
-const SLIDES = [
+const SLIDES =[ 
     {
         id: 1,
         image: "https://images.tokopedia.net/img/cache/1208/NsjrJu/2024/7/22/6d79d227-67fe-497a-a904-af990882e2ee.jpg.webp?ect=4g",
@@ -20,8 +20,8 @@ const SLIDES = [
     {
         id: 4,
         image: "https://images.tokopedia.net/img/home/defaultbanner/59e9ecd0-b91b-40d4-aef8-b1057be0_auto_x2.jpg?ect=4g",
-    },
-];
+    }
+]
 
 export default function Home() {
     return (
