@@ -14,10 +14,10 @@ export default function CategoryProduct() {
         <div className="flex md:justify-start justify-center space-x-2 md:space-x-4 sticky top-0 pt-[4.5rem] px-0 md:px-14 bg-white pb-2 mx-0 md:-mx-12 z-40 ">
             {isLoading ? (
                 <>
-                    <div className=" h-[50px] md:h-[64px] w-[85px] md:w-[216px] p-2 bg-gray-300 animate-pulse"></div>
-                    <div className=" h-[50px] md:h-[64px] w-[85px] md:w-[216px] p-2 bg-gray-300 animate-pulse"></div>
-                    <div className=" h-[50px] md:h-[64px] w-[85px] md:w-[216px] p-2 bg-gray-300 animate-pulse"></div>
-                    <div className=" h-[50px] md:h-[64px] w-[85px] md:w-[216px] p-2 bg-gray-300 animate-pulse"></div>
+                    <div className=" h-[50px] md:h-[64px] w-[95px] md:w-[216px] p-2 bg-gray-300 animate-pulse"></div>
+                    <div className=" h-[50px] md:h-[64px] w-[95px] md:w-[216px] p-2 bg-gray-300 animate-pulse"></div>
+                    <div className=" h-[50px] md:h-[64px] w-[95px] md:w-[216px] p-2 bg-gray-300 animate-pulse"></div>
+                    <div className=" h-[50px] md:h-[64px] w-[95px] md:w-[216px] p-2 bg-gray-300 animate-pulse"></div>
                 </>
             ) : (
                 categories?.map(
@@ -33,7 +33,7 @@ export default function CategoryProduct() {
                             <button
                                 key={index}
                                 className={cn(
-                                    "flex flex-col h-[50px] md:h-[64px] w-[85px] md:w-[216px] p-2 rounded-md bg-gradient-to-r",
+                                    "flex flex-col h-[50px] md:h-[64px] w-[95px] md:w-[216px] p-2 rounded-md bg-gradient-to-r",
                                     color
                                 )}
                                 onClick={() => {
