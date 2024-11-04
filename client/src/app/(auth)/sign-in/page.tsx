@@ -59,8 +59,8 @@ export default function SignIn() {
             // Menghindari reload, cukup tampilkan error dan reset loading state
             toast.error(
                 error.response?.data?.errors ||
-                error.response?.data?.message ||
-                "An error occurred. Please try again."
+                    error.response?.data?.message ||
+                    "An error occurred. Please try again."
             );
             setTimeout(() => {
                 setLoading(false);

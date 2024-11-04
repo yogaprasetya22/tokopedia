@@ -51,7 +51,7 @@ type SignUpFormValues = z.infer<typeof formSchema>;
 
 export default function SignUp() {
     const [loading, setLoading] = useState(false);
-    const router = useRouter();
+  const router = useRouter();
 
     const { mutate } = useMutation({
         mutationFn: async (data: SignUpFormValues) => {

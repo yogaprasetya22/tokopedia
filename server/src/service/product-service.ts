@@ -9,7 +9,7 @@ const getRandomCategories = (categories: any[], n: number) => {
 };
 
 const getServiceCategory = async (req: Request) => {
-    const cacheKey = "categories";
+    const cacheKey = `categories`;
 
     const cachedData: any[] | null = await cache.get(cacheKey);
     if (cachedData !== null) {

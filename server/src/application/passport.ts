@@ -13,10 +13,18 @@ passport.use(
         },
         async (accessToken, refreshToken, profile, done) => {
             try {
-                const user = await prismaClient.user.upsert({
+                // Mencari user berdasarkan googleId
+                const userExists = await prismaClient.user.findFirst({
                     where: { googleId: profile.id },
-                    update: {},
-                    create: {
+                });
+
+                if (userExists) {
+                    // User sudah terdaftar
+                    return done(null, userExists);
+                }
+
+                const user = await prismaClient.user.create({
+                    data: {
                         googleId: profile.id,
                         email: profile.emails![0].value,
                         displayName: profile.displayName,

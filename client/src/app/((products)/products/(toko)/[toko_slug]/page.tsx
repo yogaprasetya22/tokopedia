@@ -7,9 +7,9 @@ import { StarIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function page({ params }: { params: { toko_slug: string } }) {
+export default function Page({ params }: { params: { toko_slug: string } }) {
     const { isLoading, toko } = useCurrentToko(params.toko_slug);
-    const origin = useOrigin();
+    const origin: string = useOrigin();
     return (
         <div className="w-full bg-white flex justify-center">
             {isLoading ? (
