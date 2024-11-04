@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon --exec ts-node --swc src/index.ts",
     "migrate": "pnpx prisma migrate reset && pnpx prisma generate && pnpx prisma migrate dev && pnpx prisma db push",
-    "seed": "ts-node --swc src/seed.ts"
+    "seed": "ts-node --swc src/seed.ts",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",
