@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useCallback } from "react";
-import Image from "next/image";
+import React, { useEffect, useRef } from "react";
 
 function SimpleImageMagnifier(
     containerElement: string | HTMLElement,
@@ -12,7 +11,7 @@ function SimpleImageMagnifier(
     let zoomH: number = 1;
 
     const previewBoxEl: HTMLElement | HTMLDivElement | null =
-        typeof containerElement === "string"
+        typeof containerElement == "string"
             ? document.querySelector(containerElement)
             : containerElement;
 
@@ -21,7 +20,7 @@ function SimpleImageMagnifier(
     }
 
     const imageEl: HTMLImageElement | null =
-        typeof imageElement === "string"
+        typeof imageElement == "string"
             ? previewBoxEl.querySelector(imageElement)
             : imageElement;
 
@@ -30,7 +29,7 @@ function SimpleImageMagnifier(
     }
 
     const imageOriginalEl: HTMLImageElement | null =
-        typeof imageOriginalElement === "string"
+        typeof imageOriginalElement == "string"
             ? previewBoxEl.querySelector(imageOriginalElement)
             : imageOriginalElement;
 
@@ -93,7 +92,7 @@ const ImageMagnifier: React.FC<ImageMagnifierProps> = ({
     const imgOriginal = useRef<HTMLImageElement>(null);
     const refreshImage = useRef<() => void>(() => {});
 
-    const showImageMagnifier = useCallback(async () => {
+    const showImageMagnifier = async () => {
         if (container.current && imgPreview.current && imgOriginal.current) {
             imgOriginal.current.onload = () => {
                 refreshImage.current = SimpleImageMagnifier(
@@ -107,11 +106,11 @@ const ImageMagnifier: React.FC<ImageMagnifierProps> = ({
         }
 
         setTimeout(showImageMagnifier, 200);
-    }, [container, imgPreview, imgOriginal]); // Add necessary dependencies
+    };
 
     useEffect(() => {
         showImageMagnifier();
-    }, [showImageMagnifier]); // Correct dependency
+    }, []);
 
     useEffect(() => {
         refreshImage.current();
@@ -129,30 +128,26 @@ const ImageMagnifier: React.FC<ImageMagnifierProps> = ({
                 borderRadius: "8px",
             }}
         >
-            <Image
+            <img
                 ref={imgPreview}
                 src={srcPreview}
                 alt=""
-                objectFit="cover" // To cover the area
-                width={typeof width === "number" ? width : parseInt(width)}
-                height={typeof height === "number" ? height : parseInt(height)}
                 style={{
                     position: "relative",
                     zIndex: "1",
+                    objectFit: "cover",
+                    width: "100%",
+                    height: "100%",
                     transitionProperty: "opacity",
                     transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
                     transitionDuration: "300ms",
                 }}
             />
-            <Image
+            <img
                 ref={imgOriginal}
                 src={srcOriginal}
                 alt=""
-                objectFit="none" // To prevent resizing
-                width={typeof width === "number" ? width : parseInt(width)}
-                height={typeof height === "number" ? height : parseInt(height)}
                 style={{ position: "absolute", maxWidth: "none" }}
-                layout="responsive" // Maintain aspect ratio
             />
         </div>
     );
