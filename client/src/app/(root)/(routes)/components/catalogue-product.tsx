@@ -71,7 +71,7 @@ export default function CatalogueProduct() {
                         >
                             <div className="animate-pulse h-[20vh] w-full bg-gray-200/80 rounded-t-lg"></div>
                             <div className="flex flex-col p-4 gap-5">
-                                <div className="animate-pulse h-3 md:w-36 w-48 bg-green-200 rounded-xl"></div>
+                                <div className="animate-pulse h-3 w-36 bg-green-200 rounded-xl"></div>
                                 <div className="animate-pulse h-3 w-24 bg-pink-200 rounded-xl"></div>
                                 <div className="animate-pulse h-3 w-24 bg-pink-200 rounded-xl"></div>
                             </div>
