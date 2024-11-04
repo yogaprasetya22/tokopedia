@@ -16,7 +16,7 @@ export const web = express();
 
 web.use(
     cors({
-        origin: "*",
+        origin: process.env.CLIENT_URL!,
         credentials: true,
     })
 );
