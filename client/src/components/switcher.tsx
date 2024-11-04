@@ -21,7 +21,6 @@ import {
     CommandList,
     CommandSeparator,
 } from "./ui/command";
-import { useCurrentUserToko } from "@/hooks/use-products";
 import { TypeToko } from "@/type/utils-type";
 import { useOrigin } from "@/hooks/use-origin";
 

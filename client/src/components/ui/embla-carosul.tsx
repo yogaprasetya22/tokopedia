@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { EmblaOptionsType } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
-import Image from "next/image";
+import Image from "next/image"; // This is now used
 import { usePrevNextButtons, useDotButton } from "@/hooks/use-carousel";
 import { CarouselNext, CarouselPrevious, DotButton } from "./carousel-button";
 
@@ -57,17 +57,23 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = ({
                 onMouseLeave={handleMouseLeave}
             >
                 <div className="embla">
-                    <div className="embla__viewport rounded-none md:rounded-2xl" ref={emblaRef}>
+                    <div
+                        className="embla__viewport rounded-none md:rounded-2xl"
+                        ref={emblaRef}
+                    >
                         <div className="embla__container">
-                            {slides.map((slide, index) => (
+                            {slides.map((slide) => (
                                 <div
-                                    key={index + 1}
+                                    key={slide.id} // Use slide.id for better uniqueness
                                     className="embla__slide flex justify-center"
                                 >
-                                    <img
+                                    <Image
                                         src={slide.image}
-                                        alt={`Image ${index + 1}`}
+                                        alt={`Image ${slide.id}`}
                                         className="w-full h-auto object-cover"
+                                        layout="responsive" // Optional: Adjust layout as needed
+                                        width={500} // Specify width
+                                        height={300} // Specify height
                                     />
                                 </div>
                             ))}

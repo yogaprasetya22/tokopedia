@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { FileText, Home, LayoutDashboard, Settings } from "lucide-react";
+import {  Home, LayoutDashboard, Settings } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ElementType, ReactNode } from "react";
@@ -26,7 +26,7 @@ export const Sidebar = () => (
 
 // Sidebar content
 const SidebarContent = () => {
-    const { user, isLoading } = useCurrentUser();
+    const { user } = useCurrentUser();
     const pathname = "/" + usePathname().split("/")[1];
 
     const sidebarItems: SidebarItem[] = [

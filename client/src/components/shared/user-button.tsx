@@ -17,9 +17,7 @@ interface UserButton {
 }
 
 export const UserButton = ({ cookies }: UserButton) => {
-    const { isLoading, user } = cookies
-        ? useCurrentUser()
-        : { isLoading: false, user: null };
+    const { isLoading, user } = useCurrentUser(); // Call the hook unconditionally
 
     const handleLogout = async () => {
         await logout();
@@ -29,22 +27,26 @@ export const UserButton = ({ cookies }: UserButton) => {
         }, 1500);
     };
 
+    // Check if user data should be used based on cookies
+    const isUserAvailable = cookies ? user : null;
+
     return (
         <div className="flex items-center justify-between space-x-2 md:justify-end">
             {isLoading && (
                 <div className="w-8 h-8 bg-gray-200 rounded-full animate-pulse"></div>
             )}
-            {user ? (
+            {isUserAvailable ? ( // Use isUserAvailable instead of user
                 <DropdownMenu>
                     <DropdownMenuTrigger asChild>
                         <Button variant="ghost" className="size-8 rounded-full">
                             <Avatar className="size-8">
                                 <AvatarImage
-                                    src={user?.profilePicture || ""}
+                                    src={isUserAvailable?.profilePicture || ""}
                                     className="rounded-full"
                                 />
                                 <AvatarFallback>
-                                    {user?.displayName?.charAt(0) || "U"}
+                                    {isUserAvailable?.displayName?.charAt(0) ||
+                                        "U"}
                                 </AvatarFallback>
                             </Avatar>
                         </Button>
@@ -52,10 +54,10 @@ export const UserButton = ({ cookies }: UserButton) => {
                     <DropdownMenuContent className="w-56" align="end">
                         <DropdownMenuItem className="flex flex-col items-start gap-1 bg-background/95">
                             <div className="text-xs font-medium">
-                                {user?.displayName}
+                                {isUserAvailable?.displayName}
                             </div>
                             <div className="text-xs text-muted-foreground truncate max-w-48">
-                                {user?.email}
+                                {isUserAvailable?.email}
                             </div>
                         </DropdownMenuItem>
                         <DropdownMenuSeparator />

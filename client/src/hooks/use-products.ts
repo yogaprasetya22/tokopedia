@@ -6,7 +6,6 @@ import {
     TypeToko as TypeCurrentToko,
     TypeCategory as TypeCurrentCategory,
 } from "@/type/utils-type";
-import { useCurrentUser } from "./user-current-user";
 
 const getPosts = async ({
     pageParam = 1,

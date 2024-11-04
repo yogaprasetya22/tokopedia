@@ -1,3 +1,4 @@
+import { TypeProduct } from "@/type/utils-type";
 import { useMemo } from "react";
 import { create } from "zustand";
 
@@ -9,10 +10,10 @@ export interface ICategoryStore {
 export interface ICatalogueStore {
     isNextPageLoading: boolean;
     setNextPageLoading: (isLoading: boolean) => void;
-    catalogue: any[];
+    catalogue: TypeProduct[];
     clearCatalogue: () => void;
-    setCatalogue: (catalogue: any[]) => void;
-    addCatalogue: (catalogue: any[]) => void;
+    setCatalogue: (catalogue: TypeProduct[]) => void;
+    addCatalogue: (catalogue: TypeProduct[]) => void;
 }
 
 export interface IPageStore {
@@ -36,9 +37,9 @@ export const useCatalogueStore = create<ICatalogueStore>((set) => ({
         set({ isNextPageLoading: isLoading }),
     catalogue: [],
     clearCatalogue: () => set({ catalogue: [] }),
-    setCatalogue: (catalogue: any[]) => set({ catalogue }),
-    addCatalogue: (catalogue: any[]) =>
-        set((state: any) => ({
+    setCatalogue: (catalogue: TypeProduct[]) => set({ catalogue }),
+    addCatalogue: (catalogue: TypeProduct[]) =>
+        set((state) => ({
             catalogue: [...state.catalogue, ...catalogue],
         })),
 }));
@@ -48,7 +49,7 @@ export const usePageStore = create<IPageStore>((set) => ({
     totalPages: 1,
     clearPage: () => set({ page: 1 }),
     setPage: (page: number) => set({ page }),
-    addPage: () => set((state: any) => ({ page: state.page + 1 })),
+    addPage: () => set((state) => ({ page: state.page + 1 })),
     setTotalPages: (totalPages: number) => set({ totalPages }),
 }));
 

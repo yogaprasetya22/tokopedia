@@ -55,7 +55,9 @@ export default function SignIn() {
             toast.success("Account created successfully");
             window.location.href = "/";
         },
-        onError: (error: any) => {
+        onError: (error: {
+            response: { data: { errors: string; message: string } };
+        }) => {
             // Menghindari reload, cukup tampilkan error dan reset loading state
             toast.error(
                 error.response?.data?.errors ||
@@ -164,7 +166,7 @@ export default function SignIn() {
             </div>
             <Separator />
             <p className="text-center text-gray-600 text-sm">
-                Don't have an account?{" "}
+                Don&apos;t have an account?{" "}
                 <Link href="/sign-up" className="text-indigo-500">
                     Sign Up
                 </Link>

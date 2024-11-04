@@ -6,7 +6,6 @@ import Link from "next/link";
 export default function CatalogueProduct() {
     const {
         isLoading,
-        error,
         data,
         fetchNextPage,
         hasNextPage,

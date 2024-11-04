@@ -51,7 +51,7 @@ type SignUpFormValues = z.infer<typeof formSchema>;
 
 export default function SignUp() {
     const [loading, setLoading] = useState(false);
-  const router = useRouter();
+    const router = useRouter();
 
     const { mutate } = useMutation({
         mutationFn: async (data: SignUpFormValues) => {
@@ -76,7 +76,9 @@ export default function SignUp() {
             toast.success("Account created successfully");
             router.push("/sign-in");
         },
-        onError: (error: any) => {
+        onError: (error: {
+            response: { data: { errors: string; message: string } };
+        }) => {
             // Menghindari reload, cukup tampilkan error dan reset loading state
             toast.error(
                 error.response?.data?.errors ||
@@ -220,7 +222,7 @@ export default function SignUp() {
             </div>
             <Separator />
             <p className="text-center text-gray-600 text-sm">
-                Don't have an account?{" "}
+                Already have an account?{" "}
                 <Link href="/sign-in" className="text-indigo-500">
                     Sign In
                 </Link>

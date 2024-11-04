@@ -1,13 +1,13 @@
 import { useCurrentCategory } from "@/hooks/use-products";
 import { cn } from "@/lib/utils";
-import { useCategoryStore, useManageCategory } from "@/store/product-store";
+import { ICategoryStore, useCategoryStore, useManageCategory } from "@/store/product-store";
 import { TypeCategory as TypeCurrentCategory } from "@/type/utils-type";
 
 export default function CategoryProduct() {
     const { isLoading, categories } = useCurrentCategory();
     const { changeCategory } = useManageCategory();
     const currentCategory = useCategoryStore(
-        (state: any) => state.currentCategory
+        (state: ICategoryStore) => state.currentCategory
     );
 
     return (
