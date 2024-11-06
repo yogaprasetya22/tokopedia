@@ -43,7 +43,7 @@ export default function CategoryProduct() {
                                 onClick={() => {
                                     // scroll to top smoothly
                                     window.scrollTo({
-                                        top: 350,
+                                        top: 150,
                                         behavior: "smooth",
                                     });
                                     changeCategory(category.slug);

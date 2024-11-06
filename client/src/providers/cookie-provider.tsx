@@ -1,6 +1,6 @@
 "use client";
 
-import { useCurrentCookieStore } from "@/hooks/use-current-cookie";
+import { useCurrentCookieStore } from "@/store/cookie-store";
 import { ReactNode, useEffect } from "react";
 
 interface CookieProviderProps {

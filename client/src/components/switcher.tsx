@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
-import { useStoreModal } from "@/hooks/use-store-modal";
+import { useStoreModal } from "@/store/model-store";
 import { useParams, useRouter } from "next/navigation";
 import { Button } from "./ui/button";
 import {

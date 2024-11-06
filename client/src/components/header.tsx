@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { UserButton } from "./shared/user-button";
 import Image from "next/image";
 import { Button } from "./ui/button";
-import { useCurrentCookieStore } from "@/hooks/use-current-cookie";
+import { useCurrentCookieStore } from "@/store/cookie-store";
 
 const navItems: { name: string; href: string }[] = [
     { name: "Kategori", href: "/" },
